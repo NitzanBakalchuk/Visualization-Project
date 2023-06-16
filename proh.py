@@ -92,6 +92,71 @@ def app():
         st.dataframe(filtered_df)
 
 #####################################################################################################
+ st.header('3 most influential features through the years by contry')
+    st.write('Here you can see the difference between the impact of the fetures through the years by the contries that rank highest and lowest ')
+
+    features = ['Economy', 'Family', 'Health']
+    ii = ['Switzerland', 'Iceland', 'Denmark', 'Norway', 'Canada', 'Finland', 'Togo', 'Burundi', 'Syria', 'Burkina Faso', 'Afghanistan']
+
+    dfs = {'2015': df15[df15['Country'].isin(ii)][['Country'] + features],
+           '2016': df16[df16['Country'].isin(ii)][['Country'] + features],
+           '2017': df17[df17['Country'].isin(ii)][['Country'] + features],
+           '2018': df18[df18['Country'].isin(ii)][['Country'] + features],
+           '2019': df19[df19['Country'].isin(ii)][['Country'] + features]}
+
+
+    dict_economy = {}
+    dict_family = {}
+    dict_health = {}
+    for values in dfs.values():
+        for _, row in values.iterrows():
+            country = row['Country']
+            if country in dict_economy:
+                dict_economy[country].append(row.tolist()[1])
+                dict_family[country].append(row.tolist()[2])
+                dict_health[country].append(row.tolist()[3])
+            else:
+                dict_economy[country] = [row.tolist()[1]]
+                dict_family[country] = [row.tolist()[2]]
+                dict_health[country] = [row.tolist()[3]]
+
+
+    fig5 = go.Figure()
+
+    years = ['2015', '2016', '2017', '2018', '2019']
+    colors = ['green', 'green', 'green', 'green', 'green', 'green','rgb(171, 50, 96)','rgb(171, 50, 96)','rgb(171, 50, 96)','rgb(171, 50, 96)','rgb(171, 50, 96)']
+    high_countries1 = ['Switzerland', 'Iceland', 'Denmark', 'Norway', 'Canada', 'Finland', 'Togo', 'Burundi', 'Syria', 'Burkina Faso', 'Afghanistan']
+
+    categories = ['Economy', 'Family', 'Health']
+    selected_features = st.selectbox('Select features to display:', categories)
+    dict_feature = dict_economy
+    if selected_features == 'Economy':
+        dict_feature = dict_economy
+    elif selected_features == 'Family':
+        dict_feature = dict_family
+    elif selected_features == 'Health':
+        dict_feature = dict_health
+
+    for i, country in enumerate(high_countries1):
+        fig5.add_trace(go.Scatter(x=years, y=dict_feature[country], name=high_countries1[i], line_width=2.0, line=dict(color=colors[i])))
+
+
+    fig5.update_layout(title=f'{selected_features} through the years by contry',
+                      xaxis_title='Value',
+                      yaxis_title='Year',
+                      titlefont={'size': 28, 'family':'Serif'},
+                      showlegend=True,
+                      paper_bgcolor='lightgray',
+                      width=750, height=500,
+                     )
+    st.plotly_chart(fig5)
+
+
+
+#####################################################################################################
+
+
+    
     st.header("Feature Correlation With Happiness Score")
     years = ['2015', '2016', '2017', '2018', '2019']
     selected_year_3 = st.selectbox("Select Year 3",  years)
