@@ -177,6 +177,7 @@ def app():
     features = ['Economy', 'Generosity', 'Freedom', 'Family', 'Trust', 'Health']
 
     # Filter the correlation table based on selected features
+    df3 = df3.drop('Country', axis=1)
     correlation_table = df3.corr()[['Score']]
     correlation_table = correlation_table.loc[features].sort_values(by='Score', ascending=False)
 
