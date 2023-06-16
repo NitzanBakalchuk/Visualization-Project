@@ -92,6 +92,45 @@ def app():
         st.dataframe(filtered_df)
 
 #####################################################################################################
+
+     st.header("Feature Correlation With Happiness Score")
+    years = ['2015', '2016', '2017', '2018', '2019']
+    selected_year_3 = st.selectbox("Select Year 3",  years)
+    df3 = df15
+
+    if selected_year_3 == '2015':
+        df3 = df15
+    elif selected_year_3 == '2016':
+        df3 = df16
+    elif selected_year_3 == '2017':
+        df3 = df17
+    elif selected_year_3 == '2018':
+        df3 = df18
+    elif selected_year_3 == '2019':
+        df3 = df19
+
+
+    features = ['Economy', 'Generosity', 'Freedom', 'Family', 'Trust', 'Health']
+
+    # Filter the correlation table based on selected features
+    df3 = df3.drop('Country', axis=1)
+    correlation_table = df3.corr()[['Score']]
+    correlation_table = correlation_table.loc[features].sort_values(by='Score', ascending=False)
+
+    # Taking the absolute values of the correlation values
+    correlation_table['Score'] = correlation_table['Score'].abs()
+    correlation_table['Score'] = pd.to_numeric(correlation_table['Score'])
+    # Create a pie chart using Plotly Express
+    fig4 = px.pie(correlation_table, values='Score', names=correlation_table.index)
+
+    # Customize the chart colors
+    custom_colors = ['#ff9999', '#66b3ff', '#99ff99', '#ffcc99', '#c2c2f0', '#ffb3e6']
+    fig4.update_traces(marker=dict(colors=custom_colors))
+
+    # Display the chart
+    st.plotly_chart(fig4)
+
+#####################################################################################################
     st.header('3 most influential features through the years by contry')
     st.write('Here you can see the difference between the impact of the fetures through the years by the contries that rank highest and lowest ')
 
