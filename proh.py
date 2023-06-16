@@ -92,7 +92,7 @@ def app():
         st.dataframe(filtered_df)
 
 #####################################################################################################
-     st.header('3 most influential features through the years by contry')
+    st.header('3 most influential features through the years by contry')
     st.write('Here you can see the difference between the impact of the fetures through the years by the contries that rank highest and lowest ')
 
     features = ['Economy', 'Family', 'Health']
