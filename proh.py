@@ -93,7 +93,7 @@ def app():
 
 #####################################################################################################
 
-     st.header("Feature Correlation With Happiness Score")
+    st.header("Feature Correlation With Happiness Score")
     years = ['2015', '2016', '2017', '2018', '2019']
     selected_year_3 = st.selectbox("Select Year 3",  years)
     df3 = df15
