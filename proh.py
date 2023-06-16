@@ -112,7 +112,8 @@ def app():
     features = ['Economy', 'Generosity', 'Freedom', 'Family', 'Trust', 'Health']
 
     # Filter the correlation table based on selected features
-    correlation_table = df3.corr()[['Score']].loc[features].sort_values(by='Score', ascending=False)
+    correlation_table = df3.corr()[['Score']]
+    correlation_table = correlation_table.loc[features].sort_values(by='Score', ascending=False)
 
     # Taking the absolute values of the correlation values
     correlation_table['Score'] = correlation_table['Score'].abs()
