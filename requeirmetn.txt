@@ -1,6 +1,4 @@
-import streamlit as st
-import plotly.graph_objects as go
-import pandas as pd
-import matplotlib
-matplotlib.use('Agg')  # Specify the backend explicitly, e.g., 'Agg'
-import plotly.express as px
+streamlit
+plotly  
+pandas 
+matplotlib
