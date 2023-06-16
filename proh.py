@@ -116,7 +116,7 @@ def app():
 
     # Taking the absolute values of the correlation values
     correlation_table['Score'] = correlation_table['Score'].abs()
-
+    correlation_table['Score'] = pd.to_numeric(correlation_table['Score'])
     # Create a pie chart using Plotly Express
     fig4 = px.pie(correlation_table, values='Score', names=correlation_table.index)
 
