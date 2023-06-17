@@ -185,9 +185,9 @@ def app():
 
 
     fig5.update_layout(title=f'{selected_features} through the years by contry',
-                      xaxis_title='Value',
-                      yaxis_title='Year',
-                      titlefont={'size': 28, 'family':'Serif'},
+                      xaxis_title='Year',
+                      yaxis_title='Value',
+                      titlefont={'size': 25, 'family':'Serif'},
                       showlegend=True,
                       paper_bgcolor='lightgray',
                       width=750, height=500,
