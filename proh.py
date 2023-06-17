@@ -21,13 +21,23 @@ df = pd.read_csv("df.csv")
 def app():
 ################################## world map #########################################################
     st.title("World Happiness visualization")
-
-
     st.header("World Map -Happiness Score Per Country")
-    # df = pd.read_csv("df.csv")
+    date = st.slider("Year:", min_value=2015, max_value=2019, value=2015)
+    df5 = df15
+    
+    if date == 2015:
+        df5 = df15
+    elif date == 2016:
+        df5 = df16
+    elif date == 2017:
+        df5 = df17
+    elif date == 2018:
+        df5 = df18
+    elif date == 2019:
+        df5 = df19
 
     # Create the choropleth map
-    fig = px.choropleth(df, locations='Country', locationmode='country names',
+    fig = px.choropleth(df5, locations='Country', locationmode='country names',
                         color='Rank',
                         title='Rank of the countries',
                         labels={'Value': 'Score', 'Country': 'Country'},
