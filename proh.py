@@ -136,14 +136,15 @@ def app():
 
     features = ['Economy', 'Family', 'Health']
     ii = ['Switzerland', 'Iceland', 'Denmark', 'Norway', 'Canada', 'Finland', 'Togo', 'Burundi', 'Syria', 'Burkina Faso', 'Afghanistan']
+    
+    dfs = {'2015': df15[['Country'] + features],
+       '2016': df16[['Country'] + features],
+       '2017': df17[['Country'] + features],
+       '2018': df18[['Country'] + features],
+       '2019': df19[['Country'] + features]}
 
-    dfs = {'2015': df15[df15['Country'].isin(ii)][['Country'] + features],
-           '2016': df16[df16['Country'].isin(ii)][['Country'] + features],
-           '2017': df17[df17['Country'].isin(ii)][['Country'] + features],
-           '2018': df18[df18['Country'].isin(ii)][['Country'] + features],
-           '2019': df19[df19['Country'].isin(ii)][['Country'] + features]}
 
-
+    
     dict_economy = {}
     dict_family = {}
     dict_health = {}
