@@ -141,20 +141,21 @@ def app():
     st.header('Feature trend by top/bottom countries Rank')
     st.write('Here you can choose country and compare its trend to the top/bottom country by selected feature')
 
-    features = ['Economy', 'Family', 'Health']
-    ii = ['Switzerland', 'Iceland', 'Denmark', 'Norway', 'Canada', 'Finland', 'Togo', 'Burundi', 'Syria', 'Burkina Faso', 'Afghanistan']
+   features = ['Economy', 'Family','Health','Freedom', 'Trust', 'Generosity' ]
+    ii = ['Switzerland', 'Iceland', 'Denmark', 'Norway', 'Finland', 'Togo', 'Burundi', 'Syria', 'Burkina Faso', 'Afghanistan']
     
     dfs = {'2015': df15[['Country'] + features],
-       '2016': df16[['Country'] + features],
-       '2017': df17[['Country'] + features],
-       '2018': df18[['Country'] + features],
-       '2019': df19[['Country'] + features]}
-
-
+           '2016': df16[['Country'] + features],
+           '2017': df17[['Country'] + features],
+           '2018': df18[['Country'] + features],
+           '2019': df19[['Country'] + features]}
     
     dict_economy = {}
     dict_family = {}
     dict_health = {}
+    dict_trust = {}
+    dict_Generosity = {}
+    dict_Freedom = {}
     for values in dfs.values():
         for _, row in values.iterrows():
             country = row['Country']
@@ -162,21 +163,27 @@ def app():
                 dict_economy[country].append(row.tolist()[1])
                 dict_family[country].append(row.tolist()[2])
                 dict_health[country].append(row.tolist()[3])
+                dict_trust[country].append(row.tolist()[4])
+                dict_Generosity[country].append(row.tolist()[5])
+                dict_Freedom[country].append(row.tolist()[6])
             else:
                 dict_economy[country] = [row.tolist()[1]]
                 dict_family[country] = [row.tolist()[2]]
                 dict_health[country] = [row.tolist()[3]]
-
-
+                dict_trust[country] = [row.tolist()[4]]
+                dict_Generosity[country] = [row.tolist()[5]]
+                dict_Freedom[country] = [row.tolist()[6]]
+    
     fig5 = go.Figure()
-
+    
     years = ['2015', '2016', '2017', '2018', '2019']
-    colors = ['green', 'green', 'green', 'green', 'green', 'green','rgb(171, 50, 96)','rgb(171, 50, 96)','rgb(171, 50, 96)','rgb(171, 50, 96)','rgb(171, 50, 96)']
-    high_countries1 = ['Switzerland', 'Iceland', 'Denmark', 'Norway', 'Canada', 'Finland', 'Togo', 'Burundi', 'Syria', 'Burkina Faso', 'Afghanistan']
-
-    categories = ['Economy', 'Family', 'Health']
-    selected_features = st.selectbox('Select feature to display:', categories)
-    selected_country2 = st.multiselect("Select country/ies", [None] + all_country)
+    colors = ['green', 'green', 'green', 'green', 'green','rgb(171, 50, 96)','rgb(171, 50, 96)','rgb(171, 50, 96)','rgb(171, 50, 96)','rgb(171, 50, 96)']
+    high_countries1 = ['Switzerland', 'Iceland', 'Denmark', 'Norway', 'Finland', 'Togo', 'Burundi', 'Syria', 'Burkina Faso', 'Afghanistan']
+    
+    categories = ['Economy', 'Family','Health','Freedom', 'Trust', 'Generosity' ]
+    
+    selected_features = st.selectbox('Select features to display:', categories)
+    selected_country2 = st.multiselect("Select a country2", [None] + all_country)
     dict_feature = dict_economy
     if selected_features == 'Economy':
         dict_feature = dict_economy
@@ -184,6 +191,12 @@ def app():
         dict_feature = dict_family
     elif selected_features == 'Health':
         dict_feature = dict_health
+    elif selected_features == 'Generosity':
+        dict_feature = dict_Generosity
+    elif selected_features == 'Freedom':
+        dict_feature = dict_Freedom
+    elif selected_features == 'Trust':
+        dict_feature = dict_trust
 
     for i, country in enumerate(high_countries1):
         fig5.add_trace(go.Scatter(x=years, y=dict_feature[country], name=high_countries1[i], line_width=2.0, line=dict(color=colors[i])))
