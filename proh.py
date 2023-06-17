@@ -139,7 +139,7 @@ def app():
 
 ################################ 3 most influential features #######################################################
     st.header('Feature trend by top/bottom countries Rank')
-    st.write('Here you can choose country and compare it's trend to the top/bottom country by selected feature')
+    st.write('Here you can choose country and compare its trend to the top/bottom country by selected feature')
 
     features = ['Economy', 'Family', 'Health']
     ii = ['Switzerland', 'Iceland', 'Denmark', 'Norway', 'Canada', 'Finland', 'Togo', 'Burundi', 'Syria', 'Burkina Faso', 'Afghanistan']
