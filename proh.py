@@ -20,8 +20,8 @@ df = pd.read_csv("df.csv")
 # Define UI
 def app():
 ################################## world map #########################################################
-    st.title("World Happiness visualization")
-    st.header("World Map -Happiness Score Per Country")
+    st.title("World Happiness Visualization")
+    st.header("World Map -Happiness Rank by Country")
     date = st.slider("Year:", min_value=2015, max_value=2019, value=2015)
     df5 = df15
     
@@ -39,7 +39,6 @@ def app():
     # Create the choropleth map
     fig = px.choropleth(df5, locations='Country', locationmode='country names',
                         color='Rank',
-                        title='Rank of the countries',
                         labels={'Value': 'Score', 'Country': 'Country'},
                         hover_name='Country',
                         color_continuous_scale=px.colors.sequential.Plasma,
@@ -50,9 +49,7 @@ def app():
     st.plotly_chart(fig, use_container_width=True)
 ########################  Happiness ranking  ################################################################
 
-    st.header("Select a country and find out why ")
-    st.header("people are 'happy' there ")
-
+    st.header("Rank changes by years")
     st.write('Explore the difference in Happiness ranking of countries between the selected years')
     years = ['2015', '2016', '2017', '2018', '2019']
     all_country = df15['Country'].unique().tolist()
@@ -103,9 +100,9 @@ def app():
 
 ############################# Feature Correlation With Happiness Score ##########################################
 
-    st.header("Feature Correlation With Happiness Score")
+    st.header("Feature importance by Happiness Score")
     years = ['2015', '2016', '2017', '2018', '2019']
-    selected_year_3 = st.selectbox("Select Year 3",  years)
+    selected_year_3 = st.selectbox("Select Year",  years)
     df3 = df15
 
     if selected_year_3 == '2015':
