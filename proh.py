@@ -49,7 +49,7 @@ def app():
     st.plotly_chart(fig, use_container_width=True)
 ########################  Happiness ranking  ################################################################
 
-    st.header("Rank changes by years")
+    st.header("Rank change by year")
     st.write('Explore the difference in Happiness ranking of countries between the selected years')
     years = ['2015', '2016', '2017', '2018', '2019']
     all_country = df15['Country'].unique().tolist()
