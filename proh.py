@@ -86,11 +86,11 @@ def app():
     dfall['Rank Change'] = dfall['Rank Year 1'] - dfall['Rank Year 2']
 
 
-    if selected_country is None:
-        st.dataframe(
-            dfall.style.apply(lambda x: ['background: red' if x['Rank Change'] < 0 else 'background: green' for _ in x],
-                              axis=1))
-
+   
+    st.dataframe(
+        dfall.style.apply(lambda x: ['background: red' if x['Rank Change'] < 0 else 'background: green' for _ in x],
+                          axis=1))
+    dfall.style.applymap(lambda x: "background-color: red" if x>0 else "background-color: green")
     else:
         st.subheader("Rank Table")
         filtered_df = dfall[dfall['Country'] == selected_country]
