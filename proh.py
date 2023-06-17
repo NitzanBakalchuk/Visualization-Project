@@ -138,8 +138,8 @@ def app():
     st.plotly_chart(fig4)
 
 ################################ 3 most influential features #######################################################
-    st.header('3 most influential features through the years by contry')
-    st.write('Here you can see the difference between the impact of the fetures through the years by the contries that rank highest and lowest ')
+    st.header('Feature trend by top/bottom countries Rank')
+    st.write('Here you can choose country and compare it's trend to the top/bottom country by selected feature')
 
     features = ['Economy', 'Family', 'Health']
     ii = ['Switzerland', 'Iceland', 'Denmark', 'Norway', 'Canada', 'Finland', 'Togo', 'Burundi', 'Syria', 'Burkina Faso', 'Afghanistan']
@@ -175,8 +175,8 @@ def app():
     high_countries1 = ['Switzerland', 'Iceland', 'Denmark', 'Norway', 'Canada', 'Finland', 'Togo', 'Burundi', 'Syria', 'Burkina Faso', 'Afghanistan']
 
     categories = ['Economy', 'Family', 'Health']
-    selected_features = st.selectbox('Select features to display:', categories)
-    selected_country2 = st.multiselect("Select a country2", [None] + all_country)
+    selected_features = st.selectbox('Select feature to display:', categories)
+    selected_country2 = st.multiselect("Select country/ies", [None] + all_country)
     dict_feature = dict_economy
     if selected_features == 'Economy':
         dict_feature = dict_economy
@@ -192,7 +192,7 @@ def app():
         fig5.add_trace(go.Scatter(x=years, y=dict_feature[key], name=key, line_width=2.0, line=dict(color='orange')))
 
 
-    fig5.update_layout(title=f'{selected_features} through the years by contry',
+    fig5.update_layout(title=f'{selected_features} through the years by country',
                       xaxis_title='Year',
                       yaxis_title='Value',
                       titlefont={'size': 25, 'family':'Serif'},
