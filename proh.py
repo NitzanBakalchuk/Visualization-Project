@@ -141,7 +141,7 @@ def app():
     st.header('Feature trend by top/bottom countries Rank')
     st.write('Here you can choose country and compare its trend to the top/bottom country by selected feature')
 
-   features = ['Economy', 'Family','Health','Freedom', 'Trust', 'Generosity' ]
+    features = ['Economy', 'Family','Health','Freedom', 'Trust', 'Generosity' ]
     ii = ['Switzerland', 'Iceland', 'Denmark', 'Norway', 'Finland', 'Togo', 'Burundi', 'Syria', 'Burkina Faso', 'Afghanistan']
     
     dfs = {'2015': df15[['Country'] + features],
