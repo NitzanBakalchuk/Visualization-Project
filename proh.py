@@ -85,18 +85,25 @@ def app():
     dfall.columns = ['Country', 'Rank Year 1', 'Rank Year 2']
     dfall['Rank Change'] =  dfall['Rank Year 2'] - dfall['Rank Year 1'] 
 
-
-   
+        
+    def color_survived(val):
+        if val > 0 :
+            color = 'green'
+        else:
+            color = 'red'
+    
+        return f'background-color: {color}'
+    #
+    # st.dataframe(dfall.style.apply(highlight_survived, axis=1))
     if selected_country is None:
-        st.dataframe(
-            dfall.style.apply(lambda x: ['background: red' if x['Rank Change'] < 0 else 'background: green' for _ in x],
-                              axis=1))
+        st.dataframe(dfall.style.applymap(color_survived, subset=['Rank Change']))
+    
     else:
         st.subheader("Rank Table")
         filtered_df = dfall[dfall['Country'] == selected_country]
         filtered_df = filtered_df[['Country', 'Rank Year 1', 'Rank Year 2', 'Rank Change']]
-
-        st.dataframe(filtered_df)
+        st.dataframe(filtered_df.style.applymap(color_survived, subset=['Rank Change']))
+   
 
 ############################# Feature Correlation With Happiness Score ##########################################
 
