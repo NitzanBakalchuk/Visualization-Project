@@ -83,7 +83,7 @@ def app():
 
     dfall = pd.merge(df1[['Country', 'Rank']], df2[['Country', 'Rank']], on='Country')
     dfall.columns = ['Country', 'Rank Year 1', 'Rank Year 2']
-    dfall['Rank Change'] = dfall['Rank Year 1'] - dfall['Rank Year 2']
+    dfall['Rank Change'] =  dfall['Rank Year 2'] - dfall['Rank Year 1'] 
 
 
    
