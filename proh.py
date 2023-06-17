@@ -168,6 +168,7 @@ def app():
 
     categories = ['Economy', 'Family', 'Health']
     selected_features = st.selectbox('Select features to display:', categories)
+    selected_country2 = st.multiselect("Select a country2", [None] + all_country)
     dict_feature = dict_economy
     if selected_features == 'Economy':
         dict_feature = dict_economy
@@ -178,6 +179,9 @@ def app():
 
     for i, country in enumerate(high_countries1):
         fig5.add_trace(go.Scatter(x=years, y=dict_feature[country], name=high_countries1[i], line_width=2.0, line=dict(color=colors[i])))
+    dict_feature[None] = []
+    for key in selected_country2:
+        fig5.add_trace(go.Scatter(x=years, y=dict_feature[key], name=key, line_width=2.0, line=dict(color='orange')))
 
 
     fig5.update_layout(title=f'{selected_features} through the years by contry',
