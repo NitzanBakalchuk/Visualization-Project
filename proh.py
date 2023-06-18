@@ -88,7 +88,7 @@ def app():
         
     def color_survived(val):
         if val == 0:
-             color = 'white'
+             color = 'orange'
         elif val > 0 :
             color = 'green'
         else:
