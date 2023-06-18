@@ -83,11 +83,13 @@ def app():
 
     dfall = pd.merge(df1[['Country', 'Rank']], df2[['Country', 'Rank']], on='Country')
     dfall.columns = ['Country', 'Rank Year 1', 'Rank Year 2']
-    dfall['Rank Change'] =  dfall['Rank Year 2'] - dfall['Rank Year 1'] 
+    dfall['Rank Change'] =   dfall['Rank Year 1'] -dfall['Rank Year 2']
 
         
     def color_survived(val):
-        if val > 0 :
+        if val == 0:
+             color = 'white'
+        elif val > 0 :
             color = 'green'
         else:
             color = 'red'
