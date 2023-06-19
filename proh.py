@@ -192,7 +192,7 @@ def app():
     categories = ['Economy', 'Family','Health','Freedom', 'Trust', 'Generosity' ]
     
     selected_features = st.selectbox('Select features to display:', categories)
-    selected_country2 = st.multiselect("Select a country2", [None] + all_country)
+    selected_country2 = st.multiselect("Select country", [None] + all_country)
     dict_feature = dict_economy
     if selected_features == 'Economy':
         dict_feature = dict_economy
