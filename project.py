@@ -47,6 +47,7 @@ def app():
 
     # Display the map
     st.plotly_chart(fig, use_container_width=True)
+    st.write("The visualization shows the ranking and happiness score of the different countries according to the selected year. These marks are filled with colors that reflect the data value, which in this case is the country's happiness rating. The intensity of the color varies to convey the data value (hue), with shades of purple indicating higher ratings and shades of yellow representing lower ratings. This color gradient allows for a clear visual distinction between countries based on their happiness ratings")
 ########################  Happiness ranking  ################################################################
 
     st.header("Rank change by year")
