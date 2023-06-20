@@ -107,7 +107,7 @@ def app():
         filtered_df = filtered_df[['Country', 'Rank Year 1', 'Rank Year 2', 'Rank Change']]
         st.dataframe(filtered_df.style.applymap(color_survived, subset=['Rank Change']))
    
-    st.write("showing the changes in rank for a selected country between two selected years.Different background colors used to highlight the change rank,  positive change in green and negative change in red.")
+    st.write("The visualization shows the changes in rank for a selected country between two selected years.Different background colors used to highlight the change rank,  positive change in green and negative change in red.")
 ############################# Feature Correlation With Happiness Score ##########################################
 
     st.header("Feature importance by Happiness Score")
@@ -146,6 +146,7 @@ def app():
 
     # Display the chart
     st.plotly_chart(fig4)
+    st.write("The visualization shows the feature importance by happiness score. Each slice represents an attribute, and its size (area) represents the importance of that feature in relation to the happiness score. 
 
 ################################ 3 most influential features #######################################################
     st.header('Feature trend by top/bottom countries Rank')
@@ -224,7 +225,6 @@ def app():
                       width=750, height=500,
                      )
     st.plotly_chart(fig5)
-
 
 
 ##################################################################################################################
