@@ -143,9 +143,11 @@ def app():
     # Customize the chart colors
     custom_colors = ['#ff9999', '#66b3ff', '#99ff99', '#ffcc99', '#c2c2f0', '#ffb3e6']
     fig4.update_traces(marker=dict(colors=custom_colors))
-
+    col1, col2 = st.plotly_chart(2)
+    col1.pyplot(fig4)
+    col2.pyplot(fig4)
     # Display the chart
-    st.plotly_chart(fig4)
+    # st.plotly_chart(fig4)
     st.write("The visualization shows the feature importance by happiness score. Each slice represents an attribute, and its size (area) represents the importance of that feature in relation to the happiness score.")
 
 ################################ 3 most influential features #######################################################
