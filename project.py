@@ -146,7 +146,7 @@ def app():
 
     # Display the chart
     st.plotly_chart(fig4)
-    st.write("The visualization shows the feature importance by happiness score. Each slice represents an attribute, and its size (area) represents the importance of that feature in relation to the happiness score. 
+    st.write("The visualization shows the feature importance by happiness score. Each slice represents an attribute, and its size (area) represents the importance of that feature in relation to the happiness score.")
 
 ################################ 3 most influential features #######################################################
     st.header('Feature trend by top/bottom countries Rank')
