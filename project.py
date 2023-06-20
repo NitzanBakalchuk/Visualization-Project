@@ -107,7 +107,7 @@ def app():
         filtered_df = filtered_df[['Country', 'Rank Year 1', 'Rank Year 2', 'Rank Change']]
         st.dataframe(filtered_df.style.applymap(color_survived, subset=['Rank Change']))
    
-st.write("showing the changes in rank for a selected country between two selected years.Different background colors used to highlight the change rank,  positive change in green and negative change in red.")
+    st.write("showing the changes in rank for a selected country between two selected years.Different background colors used to highlight the change rank,  positive change in green and negative change in red.")
 ############################# Feature Correlation With Happiness Score ##########################################
 
     st.header("Feature importance by Happiness Score")
