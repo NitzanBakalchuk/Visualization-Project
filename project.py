@@ -113,8 +113,8 @@ def app():
     st.header("Features importance by Happiness Score")
     st.write("Choose a year and watch the features importance to the happiness score")
     selected_year_3 = st.selectbox("Select Year",  years)
-
-    st.write(' choose different countries to understand the features importance better')
+    st.write("Choose different countries and watch how them correlates to the features importance pie chart")
+    st.write('choose different countries to understand the features importance better')
     years = ['2015', '2016', '2017', '2018', '2019']
     
     # col1, col2 = st.columns([2, 1])
