@@ -165,9 +165,9 @@ def app():
 
 ################################ 3 most influential features #######################################################
     st.header('Feature trend by top/bottom countries Rank')
-    st.write('The graph below presents the top 5 ranked countries in the green lines and the bottom 5 ranked countries in purple')
-    st.write('choose a feature and countries and compare their trend to the top/bottom ranked countries trend by the selected feature')
-    st.write('here you can understand why countries changed their rank by the years and dive into the countries comparison')
+    st.write('The graph below presents the top 5 ranked countries in the green lines and the bottom 5 ranked countries in purple.')
+    st.write('Choose a feature and countries and compare their trend to the top/bottom ranked countries trend by the selected feature.')
+    st.write('Here you can understand why countries changed their rank by the years and dive into the countries comparison.')
     features = ['Economy', 'Family','Health','Freedom', 'Trust', 'Generosity' ]
     ii = ['Switzerland', 'Iceland', 'Denmark', 'Norway', 'Finland', 'Togo', 'Burundi', 'Syria', 'Burkina Faso', 'Afghanistan']
     
