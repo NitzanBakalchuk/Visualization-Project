@@ -109,14 +109,15 @@ def app():
         st.dataframe(filtered_df.style.applymap(color_survived, subset=['Rank Change']))
    
 ############################# Feature Correlation With Happiness Score ##########################################
-    st.header("Feature importance by Happiness Score")
-    st.write("Choose a year and a country and watch the features importance to the happiness score in the selected year, and the features ditstibution in the selected country")
-    st.write('keep choosing different countries to understand the features importance better')
+    st.header("Features importance by Happiness Score")
+    st.write("Choose a year and watch the features importance to the happiness score')
+    selected_year_3 = st.selectbox("Select Year",  years)
+
+    st.write(' choose different countries to understand the features importance better')
     years = ['2015', '2016', '2017', '2018', '2019']
     
-    col1, col2 = st.columns([2, 1])
-    selected_country_3 = col1.selectbox("Select country to explore",  all_country)
-    selected_year_3 = col2.selectbox("Select Year",  years)
+    # col1, col2 = st.columns([2, 1])
+    selected_country_3 = st.selectbox("Select country to explore",  all_country)
     
     df3 = df15
     if selected_year_3 == '2015':
