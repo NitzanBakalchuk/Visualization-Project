@@ -21,7 +21,7 @@ def app():
 ################################## world map #########################################################
     st.title("World Happiness Visualization")
     st.header("World Map -Happiness Rank by Country")
-    st.write("The word map below shows the happiness ranking around the globe")
+    st.write("The word map below shows the happiness ranking around the globe,")
     st.write("please choose the year you want to present at the bar below and start to explore!")
     date = st.slider("Year:", min_value=2015, max_value=2019, value=2015)
     df5 = df15
@@ -50,10 +50,10 @@ def app():
     st.plotly_chart(fig, use_container_width=True)
 ########################  Happiness ranking  ################################################################
 
-    st.header("Rank change by year")
+    st.header("Rank changes by years")
     st.write('Explore the difference in Happiness ranking of countries between the selected years')
-    st.write("The visualization shows the changes in rank for a selected country between two selected years.Different background colors used to highlight the change rank,  positive change in green and negative change in red.")
-
+    st.write("The visualization shows the changes in rank for a selected country between two selected years.")
+    st.write('note: you can also select none option and sort the values by pressing the top of each column.')
     years = ['2015', '2016', '2017', '2018', '2019']
     all_country = df15['Country'].unique().tolist()
     selected_country = st.selectbox("Select a country", [None] + all_country)
