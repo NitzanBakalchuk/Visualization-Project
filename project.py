@@ -21,8 +21,8 @@ def app():
 ################################## world map #########################################################
     st.title("World Happiness Visualization")
     st.header("World Map -Happiness Rank by Country")
-    st.write("The word map below shows the happiness ranking around the globe, please choose the year you want to present at the bar below.")
-
+    st.write("The word map below shows the happiness ranking around the globe")
+    st.write("please choose the year you want to present at the bar below and start to explore!")
     date = st.slider("Year:", min_value=2015, max_value=2019, value=2015)
     df5 = df15
     
