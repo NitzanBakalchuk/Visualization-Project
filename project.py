@@ -110,7 +110,7 @@ def app():
    
 ############################# Feature Correlation With Happiness Score ##########################################
     st.header("Features importance by Happiness Score")
-    st.write("Choose a year and watch the features importance to the happiness score')
+    st.write("Choose a year and watch the features importance to the happiness score")
     selected_year_3 = st.selectbox("Select Year",  years)
 
     st.write(' choose different countries to understand the features importance better')
