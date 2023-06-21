@@ -52,8 +52,7 @@ def app():
 
     st.header("Rank changes by years")
     st.write('Explore the difference in Happiness ranking of countries between the selected years')
-    st.write("The visualization shows the changes in rank for a selected country between two selected years.")
-    st.write('note: you can also select none option and sort the values by pressing the top of each column.')
+    st.write('note: you can also select none option at the country selection and sort the values by pressing the top of each column.')
     years = ['2015', '2016', '2017', '2018', '2019']
     all_country = df15['Country'].unique().tolist()
     selected_country = st.selectbox("Select a country", [None] + all_country)
