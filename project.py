@@ -93,7 +93,7 @@ def app():
         if val == 0:
              color = 'white'
         elif val > 0 :
-            color = 'green'
+            color = '#99ff99'
         else:
             color = '#66b3ff'
     
