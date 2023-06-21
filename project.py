@@ -56,8 +56,9 @@ def app():
     years = ['2015', '2016', '2017', '2018', '2019']
     all_country = df15['Country'].unique().tolist()
     selected_country = st.selectbox("Select a country", [None] + all_country)
-    selected_year_1 = st.selectbox("Select Year 1", [None] + years)
-    selected_year_2 = st.selectbox("Select Year 2", [None] + years)
+    col1, col2 = st.columns([1, 1])
+    selected_year_1 = col1.selectbox("Select Year 1", [None] + years)
+    selected_year_2 = col2.selectbox("Select Year 2", [None] + years)
     df1 = df15
     df2 = df19
 
