@@ -91,11 +91,11 @@ def app():
         
     def color_survived(val):
         if val == 0:
-             color = 'purple'
+             color = 'white'
         elif val > 0 :
             color = 'green'
         else:
-            color = 'red'
+            color = 'purple'
     
         return f'background-color: {color}'
     #
