@@ -91,7 +91,7 @@ def app():
         
     def color_survived(val):
         if val == 0:
-             color = 'orange'
+             color = 'purple'
         elif val > 0 :
             color = 'green'
         else:
@@ -165,8 +165,9 @@ def app():
 
 ################################ 3 most influential features #######################################################
     st.header('Feature trend by top/bottom countries Rank')
-    st.write('Here you can choose country and compare its trend to the top/bottom country by selected feature')
-
+    st.write('The graph below presents the top 5 ranked countries in the green lines and the bottom 5 ranked countries in purple')
+    st.write('choose a feature and countries and compare their trend to the top/bottom ranked countries trend by the selected feature')
+    st.write('here you can understand why countries changed their rank by the years and dive into the countries comparison')
     features = ['Economy', 'Family','Health','Freedom', 'Trust', 'Generosity' ]
     ii = ['Switzerland', 'Iceland', 'Denmark', 'Norway', 'Finland', 'Togo', 'Burundi', 'Syria', 'Burkina Faso', 'Afghanistan']
     
