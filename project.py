@@ -95,7 +95,7 @@ def app():
         elif val > 0 :
             color = 'green'
         else:
-            color = 'purple'
+            color = '#66b3ff'
     
         return f'background-color: {color}'
     #
