@@ -110,10 +110,12 @@ def app():
    
 ############################# Feature Correlation With Happiness Score ##########################################
     st.header("Feature importance by Happiness Score")
+    st.write("Choose a year and a country and watch the features importance to the happiness score in the selected year, and the features ditstibution in the selected country")
+    st.write('keep choosing different countries to understand the features importance better')
     years = ['2015', '2016', '2017', '2018', '2019']
     
     col1, col2 = st.columns([2, 1])
-    selected_country_3 = col1.selectbox("Select country to see the values",  all_country)
+    selected_country_3 = col1.selectbox("Select country to explore",  all_country)
     selected_year_3 = col2.selectbox("Select Year",  years)
     
     df3 = df15
@@ -159,7 +161,6 @@ def app():
     col2.plotly_chart(fig4, use_container_width=True)
     # # Display the chart
     # st.plotly_chart(fig4)
-    st.write("The visualization shows the feature importance by happiness score. Each slice represents an attribute, and its size (area) represents the importance of that feature in relation to the happiness score.")
 
 ################################ 3 most influential features #######################################################
     st.header('Feature trend by top/bottom countries Rank')
