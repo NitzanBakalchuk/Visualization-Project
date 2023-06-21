@@ -208,9 +208,10 @@ def app():
     high_countries1 = ['Switzerland', 'Iceland', 'Denmark', 'Norway', 'Finland', 'Togo', 'Burundi', 'Syria', 'Burkina Faso', 'Afghanistan']
     
     categories = ['Economy', 'Family','Health','Freedom', 'Trust', 'Generosity' ]
-    
-    selected_features = st.selectbox('Select features to display:', categories)
-    selected_country2 = st.multiselect("Select country", [None] + all_country)
+
+    col1, col2 = st.columns([1, 3])
+    selected_features = col1.selectbox('Select features to display:', categories)
+    selected_country2 = col2.multiselect("Select country", [None] + all_country)
     dict_feature = dict_economy
     if selected_features == 'Economy':
         dict_feature = dict_economy
