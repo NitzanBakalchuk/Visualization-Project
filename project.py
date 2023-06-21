@@ -207,7 +207,7 @@ def app():
     colors = ['green', 'green', 'green', 'green', 'green','rgb(171, 50, 96)','rgb(171, 50, 96)','rgb(171, 50, 96)','rgb(171, 50, 96)','rgb(171, 50, 96)']
     high_countries1 = ['Switzerland', 'Iceland', 'Denmark', 'Norway', 'Finland', 'Togo', 'Burundi', 'Syria', 'Burkina Faso', 'Afghanistan']
     
-    categories = ['⭐️Economy', '⭐️Family','⭐️Health','⭐️Freedom', '⭐️Trust', '⭐️Generosity' ]
+    categories = ['Economy', 'Family','Health','Freedom', 'Trust', 'Generosity' ]
     
     selected_features = st.selectbox('Select features to display:', categories)
     selected_country2 = st.multiselect("Select country", [None] + all_country)
