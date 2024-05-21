@@ -1,3 +1,5 @@
+## App link : visualization-app
+#Introduction:
 The focus of our visualization is to perform a comprehensive analysis of the happiness rates of countries worldwide, based on multiple attributes collected. Our goal is to shed light on the understanding and significance of the various attributes influencing the world happiness rate, and address the main question of identifying the key factors that affect happiness rates in different countries. Moreover, we aim to answer additional sub-questions such as How does the distribution of happiness rates vary around the globe, Is it possible to identify significant Rank changes in the measurements between different years? What factors contributed to the changes in country rankings between the years? Can we find a pattern ? Are there discernible common factors among countries that rank highest and lowest ?
 
 By providing this information, our visualization can offer valuable insights and guidance for policymakers, researchers, and other stakeholders invested in enhancing happiness rates across the globe.
